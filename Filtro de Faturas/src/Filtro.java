@@ -17,16 +17,20 @@ public class Filtro {
     private static boolean precisaRemover(Fatura fatura) {
         if (fatura.valor < 2000) return true;
         if (fatura.valor <= 2500) {
-            Date umMesAtras = Date.from(ZonedDateTime.now().minusMonths(1).toInstant());
+            Date umMesAtras = getMesesAtras(1);
             return fatura.date.before(umMesAtras);
         }
         if (fatura.valor <= 3000) {
-            Date doisMesesAtras = Date.from(ZonedDateTime.now().minusMonths(2).toInstant());
+            Date doisMesesAtras = getMesesAtras(2);
             return fatura.cliente.dataDeInclusao.before(doisMesesAtras);
         }
         if (fatura.valor > 4000) {
             return fatura.cliente.estado.regiao == Regiao.SUL;
         }
         return false;
+    }
+
+    private static Date getMesesAtras(int meses) {
+        return Date.from(ZonedDateTime.now().minusMonths(meses).toInstant());
     }
 }

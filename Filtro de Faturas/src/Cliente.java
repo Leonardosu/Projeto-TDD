@@ -7,6 +7,9 @@ public class Cliente {
 
     public Cliente(String nome, Date dataDeInclusao, Estado estado) {
         this.nome = nome;
+        if (nome == null || nome.equals("")) {
+            throw new IllegalArgumentException();
+        }
         this.dataDeInclusao = dataDeInclusao;
         this.estado = estado;
     }
