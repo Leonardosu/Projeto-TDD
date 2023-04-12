@@ -10,5 +10,8 @@ public class Fatura {
         this.valor = valor;
         this.date = date;
         this.cliente = cliente;
+        if (valor < 0) {
+            throw new IllegalArgumentException();
+        }
     }
 }
