@@ -66,4 +66,12 @@ public class FiltroTest {
         faturas.add(fatura);
         assertEquals(listaVazia, Filtro.filtraFaturas(faturas));
     }
+
+    @Test
+    public void testNadaARemover() {
+        List<Fatura> faturas = new ArrayList<>();
+        Fatura fatura = new Fatura("333", 7000, data, cliente);
+        faturas.add(fatura);
+        assertEquals(faturas, Filtro.filtraFaturas(faturas));
+    }
 }
