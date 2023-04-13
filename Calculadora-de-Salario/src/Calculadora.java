@@ -28,6 +28,10 @@ public class Calculadora {
                 limite = 5000.0;
                 desconto = (salario >= limite ? 30 : 20);
             }
+            default -> {
+                throw new NotImplementedException(
+                        "Desconto para o cargo: " + cargo + " nao implementado");
+            }
         }
 
         return desconto / 100.0;
