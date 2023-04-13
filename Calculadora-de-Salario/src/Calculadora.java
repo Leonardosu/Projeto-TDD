@@ -1,17 +1,18 @@
+import jdk.jshell.spi.ExecutionControl.NotImplementedException;
 import model.Cargo;
 import model.Funcionario;
 
 public class Calculadora {
-    public static double salarioFinal(Funcionario funcionario) {
+    public static double salarioFinal(Funcionario funcionario) throws NotImplementedException {
         double salario = funcionario.getSalario();
         Cargo cargo = funcionario.getCargo();
 
         double desconto = getDesconto(salario, cargo);
-        return salario * (100 - desconto);
+        return salario * (1.0 - desconto);
     }
 
-    public static double getDesconto(double salario, Cargo cargo) {
-        double desconto = 0;
+    public static double getDesconto(double salario, Cargo cargo) throws NotImplementedException {
+        double desconto;
         double limite;
 
         switch (cargo) {
@@ -29,7 +30,7 @@ public class Calculadora {
             }
         }
 
-        return desconto;
+        return desconto / 100.0;
     }
 
 }
