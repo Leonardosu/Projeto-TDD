@@ -1,5 +1,8 @@
+import model.Cliente;
+import model.Estado;
+import model.Fatura;
+import model.Filtro;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.time.ZonedDateTime;
@@ -7,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FiltroTest {
 
