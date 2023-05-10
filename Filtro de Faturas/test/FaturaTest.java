@@ -1,11 +1,12 @@
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
+import model.Cliente;
+import model.Estado;
+import model.Fatura;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class FaturaTest {
 
