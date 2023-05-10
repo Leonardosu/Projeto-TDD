@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import model.Cargo;
 import model.Funcionario;
+import calculadora.Calculadora;
 
 class CalculadoraTest {
     @Test
